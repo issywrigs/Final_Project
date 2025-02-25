@@ -34,7 +34,7 @@ def suggest_faster_savings(time_needed, monthly_savings):
         new_time = round((time_needed * monthly_savings) / new_savings, 1)
         print(f"- If you save €{new_savings} per month, you'll reach your goal in {new_time} months!")
 
-def display_summary(destination, trip_budget, local_currency, time_needed, savings, trip_cost_in_eur):
+#def display_summary(destination, trip_budget, local_currency, time_needed, savings, trip_cost_in_eur):
     """Displays final savings plan and estimated travel date."""
     today = datetime.date.today()
     estimated_date = today + datetime.timedelta(days=30 * time_needed)
