@@ -57,6 +57,7 @@ def suggest_packing_list(destination, travel_month):
     """Suggests a packing list based on expected weather."""
     month_abbr = travel_month[:3]
 
+    destination = destination.title() #ensures that if the user enters their destination without any capital letters, they will still get a packing list
     if destination in weather_data and month_abbr in weather_data[destination]:
         avg_temp = weather_data[destination][month_abbr]
 
@@ -107,7 +108,7 @@ if travel_plan == "no":
     exit()
 
 try:
-    destination = input("Enter your destination country: ").strip()
+    destination = input("Enter your destination country: ").strip().title()
     local_currency = input("Enter the currency for this destination (JPY, EUR, GBP, CAD, AUD, USD): ").strip().upper()
 
     exchange_rate = get_exchange_rate(local_currency)
