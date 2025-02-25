@@ -44,7 +44,7 @@ def display_summary(destination, trip_budget, local_currency, time_needed, savin
     today = datetime.date.today()
     estimated_date = today + datetime.timedelta(days=30 * time_needed)
 
-   print("\n--- Travel Savings Summary ---")
+    print("\n--- Travel Savings Summary ---")
     print(f"Destination: {destination}")
     print(f"Total Trip Cost in {local_currency}: {trip_budget:,.2f}")
     print(f"Total Trip Cost in EUR: {trip_cost_in_eur:,.2f}")
@@ -55,3 +55,18 @@ def display_summary(destination, trip_budget, local_currency, time_needed, savin
     if time_needed > 0:
         print("Tip: Increase monthly savings to reach your goal sooner!")
         suggest_faster_savings(time_needed, monthly_savings)
+
+
+# Main program
+print("Welcome to the Travel Savings & Currency Converter! Find out how long you need to save for your trip!\n")
+
+# Check if they are traveling to a country supported by our currency converter and end the program if not
+print("Are you planning to travel to the USA, EU, UK, Japan, Australia, or Canada?")
+travel_plan = input("Type 'yes' or 'no': ").strip().lower()
+
+if travel_plan == "yes":
+    print("That’s exciting! Let’s continue planning your trip.\n")
+elif travel_plan == "no":
+    print("Unfortunately, this converter only supports certain destinations at the moment.")
+    print("We hope you enjoy your trip, and feel free to come back in the future!")
+    exit()  # Exits the program
