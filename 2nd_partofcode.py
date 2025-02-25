@@ -39,9 +39,19 @@ def suggest_faster_savings(time_needed, monthly_savings):
         print(f"- If you save €{new_savings} per month, you'll reach your goal in {new_time} months!")
 
 
-
 def display_summary(destination, trip_budget, local_currency, time_needed, savings, trip_cost_in_eur):
     """Displays final savings plan and estimated travel date."""
     today = datetime.date.today()
     estimated_date = today + datetime.timedelta(days=30 * time_needed)
 
+   print("\n--- Travel Savings Summary ---")
+    print(f"Destination: {destination}")
+    print(f"Total Trip Cost in {local_currency}: {trip_budget:,.2f}")
+    print(f"Total Trip Cost in EUR: {trip_cost_in_eur:,.2f}")
+    print(f"Current Savings: €{savings:,.2f}")
+    print(f"Time needed to save: {time_needed} months")
+    print(f"Estimated travel-ready date: {estimated_date.strftime('%B %Y')}")
+
+    if time_needed > 0:
+        print("Tip: Increase monthly savings to reach your goal sooner!")
+        suggest_faster_savings(time_needed, monthly_savings)
