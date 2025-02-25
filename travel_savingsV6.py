@@ -1,14 +1,7 @@
 import datetime
 
 # Exchange rates (fixed, EUR as base currency, based on the exchange rates on the 24th of February 2025)
-exchange_rates = {
-    "EUR": 1.0,
-    "USD": 1.045,
-    "GBP": 0.83,
-    "JPY": 162.5,
-    "AUD": 1.64,
-    "CAD": 1.48
-}
+exchange_rates = { "EUR": 1.0, "USD": 1.045, "GBP": 0.83,"JPY": 162.5,"AUD": 1.64,"CAD": 1.48}
 
 # Weather data (Average monthly temperatures in °C for each country)
 weather_data = {
